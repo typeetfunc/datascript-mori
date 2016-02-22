@@ -1,0 +1,15 @@
+(function (definition) {
+    // CommonJS
+    if (typeof exports === "object") {
+        module.exports = definition();
+
+    // RequireJS
+    } else if (typeof define === "function" && define.amd) {
+        define(definition);
+
+    // <script>
+    } else {
+        datascript_mori = definition();
+    }
+})(function () {
+    return function () {

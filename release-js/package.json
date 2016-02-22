@@ -1,0 +1,31 @@
+{
+  "name": "datascript-mori",
+  "version": "0.15.0",
+  "description": "Wrapper for datascript interplay mori",
+  "homepage": "https://github.com/typeetfunc/datascript-mori",
+  "author": "Andrei Melnikov (https://github.com/typeetfunc)",
+  "keywords": [
+    "datascript",
+    "mori",
+    "immutable"
+  ],
+  "bugs": {
+    "url": "https://github.com/typeetfunc/datascript-mori/issues"
+  },
+  "licenses": [
+    {
+      "type": "EPL",
+      "url": "https://github.com/typeetfunc/datascript-mori/blob/master/LICENSE"
+    }
+  ],
+  "main": "./datascript-mori.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/typeetfunc/datascript-mori.git"
+  },
+  "engines": {
+      "node": ">=0.8.22"
+  },
+  "dependencies": {},
+  "files": ["datascript-mori.js"]
+}
