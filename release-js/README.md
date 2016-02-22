@@ -18,7 +18,7 @@ DataScript-Mori can be used from any JS engine without additional dependencies:
 or as a CommonJS module ([npm page](https://www.npmjs.org/package/datascript-mori)):
 
 ```
-npm install datascript
+npm install datascript-mori
 ```
 
 ```js
