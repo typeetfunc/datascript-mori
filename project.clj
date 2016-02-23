@@ -1,6 +1,6 @@
-(defproject datascript-mori "0.1.0-SNAPSHOT"
-  :description "FIXME: write this!"
-  :url "http://example.com/FIXME"
+(defproject datascript-mori "0.15.2"
+  :description "Wrapper for datascript interplay mori"
+  :url "https://github.com/typeetfunc/datascript-mori"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
