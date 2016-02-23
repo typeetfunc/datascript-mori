@@ -1,1 +1,4 @@
 /target/
+.lein-git-deps
+release-js/datascript-mori.bare.js
+release-js/datascript-mori.js

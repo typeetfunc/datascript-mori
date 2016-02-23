@@ -2,10 +2,9 @@
   (:require
     [datascript.core :as d]
     [datascript.js :as djs]
-    [mori :as m]))
+    [mori :as m]
+    [mori.extra :as me]))
 
-(defn ^:export reader [query]
-  (cljs.reader/read-string query))
+(def ^:export reader cljs.reader/read-string)
 
-(defn ^:export str_to_keyword [s]
-  (keyword s))
+(def ^:export str_to_keyword keyword)
