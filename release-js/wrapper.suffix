@@ -1,4 +1,4 @@
-        ;return {mori: mori, datascript: datascript, reader: datascript_mori.core.reader, keyword: datascript_mori.core.str_to_keyword};
+        ;return {mori: mori, datascript: datascript, helpers: datascript_mori.core};
 
     }.call({});
 
