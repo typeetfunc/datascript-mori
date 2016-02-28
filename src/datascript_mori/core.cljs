@@ -29,6 +29,7 @@
 (def ^:export DB_CARDINALITY :db/cardinality)
 (def ^:export DB_CARDINALITY_MANY :db.cardinality/many)
 (def ^:export DB_UNIQUE :db/unique)
+(def ^:export DB_IDENT :db/ident)
 (def ^:export DB_UNIQUE_IDENTITY :db.unique/identity)
 (def ^:export DB_ADD :db/add)
 (def ^:export DB_RETRACT :db/retract)
