@@ -67,3 +67,8 @@ var helpers = datascript_mori.helpers;
 
  - [combineJsAndCljsApi.spec.js](https://github.com/typeetfunc/datascript-mori/blob/master/release-js/test/combineJsAndCljsApi.spec.js) - this example demonstrated how to combine JS API with CLJS call [d.q() to get mori values](https://github.com/typeetfunc/datascript-mori/blob/master/release-js/test/combineJsAndCljsApi.spec.js#L48)
  -  [onlyCljsApiUsage.spec.js](https://github.com/typeetfunc/datascript-mori/blob/master/release-js/test/onlyCljsApiUsage.spec.js) - this example demonstrated how to use only CLJS API without any conversion(only mori.parse for parsing EDN string)
+
+## Roadmap
+
+ - Open access to [parse-query](https://github.com/tonsky/datascript/blob/master/src/datascript/parser.cljc#L732) and [parse-pull](https://github.com/tonsky/datascript/blob/master/src/datascript/pull_parser.cljc#L217) API
+ - Investigate [Posh](https://github.com/mpdairy/posh) and include to `datascript-mori` support `tx-pattern`
