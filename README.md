@@ -22,20 +22,22 @@ Datascript is written in ClojureScript. Also Datascript designed for using from 
 ## Usage
 
  - (**Recommended**) Using EcmaScript 2015 modules:
+
  ```js
 import {
-  datascript, // This is contain datascript object
-  mori,       // This is contain mori object
-  helpers     // This is contain helpers for conversions from CLJS
+   datascript, // This is contain datascript object
+   mori,       // This is contain mori object
+   helpers     // This is contain helpers for conversions from CLJS
 } from 'datascript-mori';
 
 const {
-  core, // This is pure DataScript CLJS API without any conversions
-  js    // This is DataScript JS API
+   core, // This is pure DataScript CLJS API without any conversions
+   js    // This is DataScript JS API
 } = datascript;
  ```
 
  - Using CommonJS modules:
+
  ```js
 var datascript_mori = require('datascript-mori');
 
@@ -46,6 +48,7 @@ var helpers = datascript_mori.helpers;
  ```
 
  - (**Not recommended**) Using tag <script> in Browser:
+
 ```html
 <script src="datascript-mori.js"></script>
 <script>
