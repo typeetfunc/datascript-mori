@@ -15,7 +15,7 @@ Datascript is written in ClojureScript. Also Datascript designed for using from 
 
  - (**Recommended**) Install from [NPM](https://www.npmjs.org/package/datascript-mori)
  ```
- npm install datascript
+ npm install datascript-mori
  ```
  - Download [latest release](https://github.com/typeetfunc/datascript-mori/releases/latest)
 
