@@ -2,6 +2,8 @@
   (:require
     [datascript.core :as d]
     [datascript.js :as djs]
+    [datascript.parser :as dp]
+    [datascript.pull-parser :as dpp]
     [mori :as m]
     [mori.extra :as me]))
 
@@ -13,6 +15,9 @@
 (def ^:export js_to_Datom        djs/js->Datom)
 (def ^:export pull_result_to_js  djs/pull-result->js)
 (def ^:export keywordize  djs/keywordize)
+
+(def ^:export parse_query dp/parse-query)
+(def ^:export parse_pull dpp/parse-pull)
 
 (def ^:export DB_ID :db/id)
 (def ^:export DB_FN_CALL :db.fn/call)
