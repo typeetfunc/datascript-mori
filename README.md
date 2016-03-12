@@ -63,7 +63,7 @@ var helpers = datascript_mori.helpers;
 - `datascript_mori.datascript.core` - is a [CLJS DataScript API](https://github.com/tonsky/datascript/wiki/API-overview). All functions accept CLJS data structures and return back CLJS data structures(i.e mori values). All names of these functions converts("munging") with symbols allowed in JS for function name. [See mapping list](https://github.com/typeetfunc/datascript-mori/wiki/Mapping-names-of-functions).
 - `datascript_mori.datascript.js` - is a [JS DataScript API](https://github.com/tonsky/datascript/wiki/Javascript-API)
 - `mori` - is a [mori object](http://swannodette.github.io/mori/)
-- `helpers` - is a helpers [functions](https://github.com/typeetfunc/datascript-mori/blob/master/src/datascript_mori/core.cljs#L8-L47) for convert JS data structures to CLJS data structures and CLJS data structures to JS data structures
+- `helpers` - is a helpers [functions](https://github.com/typeetfunc/datascript-mori/blob/master/src/datascript_mori/core.cljs#L8-L47) for convert JS data structures to CLJS data structures and CLJS data structures to JS data structures. Also `helpers` contains functions for parsing Datalog queries -  [parse_query](https://github.com/tonsky/datascript/blob/master/src/datascript/parser.cljc#L732) and [parse_pull](https://github.com/tonsky/datascript/blob/master/src/datascript/pull_parser.cljc#L217).
 
 ## Examples
 
@@ -72,5 +72,4 @@ var helpers = datascript_mori.helpers;
 
 ## Roadmap
 
- - Open access to [parse-query](https://github.com/tonsky/datascript/blob/master/src/datascript/parser.cljc#L732) and [parse-pull](https://github.com/tonsky/datascript/blob/master/src/datascript/pull_parser.cljc#L217) API
  - Investigate [Posh](https://github.com/mpdairy/posh) and include to `datascript-mori` support `tx-pattern`
