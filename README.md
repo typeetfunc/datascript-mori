@@ -73,3 +73,8 @@ var helpers = datascript_mori.helpers;
 ## Roadmap
 
  - Investigate [Posh](https://github.com/mpdairy/posh) and include to `datascript-mori` support `tx-pattern`
+
+## Related projects
+
+ - [Babel-plugin-datascript](https://github.com/typeetfunc/babel-plugin-datascript) - Plugin for precompile static DataScript query to Mori structs and check them during compilation.
+ - [Rx-DataScript](https://github.com/typeetfunc/rx-datascript) - RxJS wrapper for DataScript.
