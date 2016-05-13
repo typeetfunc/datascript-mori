@@ -1,6 +1,6 @@
 {
   "name": "datascript-mori",
-  "version": "0.15.8",
+  "version": "0.16.0",
   "description": "Wrapper for datascript interplay mori",
   "homepage": "https://github.com/typeetfunc/datascript-mori",
   "author": "Andrei Melnikov (https://github.com/typeetfunc)",
@@ -40,7 +40,8 @@
   },
   "scripts": {
     "build": "cd .. && lein cljsbuild once min && cd release-js",
-    "test": "mocha --harmony --compilers js:babel-core/register test/*.spec.js"
+    "test": "mocha --harmony --compilers js:babel-core/register test/*.spec.js",
+    "prepublish": "npm run build && npm run test"
   },
   "files": [
     "datascript-mori.js"
