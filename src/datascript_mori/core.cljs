@@ -5,7 +5,9 @@
     [datascript.parser :as dp]
     [datascript.pull-parser :as dpp]
     [mori :as m]
-    [mori.extra :as me]))
+    [mori.extra :as me]
+    [cljs.reader :as reader]
+    [datascript.lru :as dlru]))
 
 (def ^:export schema_to_clj      djs/schema->clj)
 (def ^:export entity_to_clj      djs/entity->clj)
@@ -18,6 +20,17 @@
 
 (def ^:export parse_query dp/parse-query)
 (def ^:export parse_pull dpp/parse-pull)
+
+(def ^:const lru-cache-size 300)
+(def ^:export lru dlru/lru)
+(def ^:export cleanup_lru dlru/cleanup-lru)
+(def ^:export query_cache (volatile! (dlru/lru lru-cache-size)))
+(defn ^:export memoized_parse [q]
+  (if-let [cached (get @query_cache q nil)]
+    cached
+    (let [qp (reader/read-string q)]
+      (vswap! query_cache assoc q qp)
+      qp)))
 
 (def ^:export DB_ID :db/id)
 (def ^:export DB_FN_CALL :db.fn/call)
