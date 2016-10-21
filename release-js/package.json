@@ -39,7 +39,7 @@
     "mocha": "^2.3.4"
   },
   "scripts": {
-    "build": "npm i && cd .. && lein cljsbuild once min && cd release-js",
+    "build": "cd .. && lein cljsbuild once min && cd release-js",
     "test": "mocha --harmony --compilers js:babel-core/register test/*.spec.js",
     "prepublish": "npm run build && npm run test"
   },
