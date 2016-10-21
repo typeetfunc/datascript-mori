@@ -1,4 +1,4 @@
-(defproject datascript-mori "0.15.2"
+(defproject datascript-mori "0.15.4"
   :description "Wrapper for datascript interplay mori"
   :url "https://github.com/typeetfunc/datascript-mori"
   :license {:name "Eclipse Public License"
@@ -8,7 +8,7 @@
 
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [org.clojure/clojurescript "1.7.170"]
-                 [datascript "0.15.0"]]
+                 [datascript "0.15.4"]]
 
   :plugins [[lein-cljsbuild "1.1.2" :exclusions [[org.clojure/clojure]]]
             [lein-git-deps "0.0.2-SNAPSHOT"]]
