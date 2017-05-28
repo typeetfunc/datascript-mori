@@ -7,6 +7,7 @@
     [mori :as m]
     [mori.extra :as me]
     [cljs.reader :as reader]
+    [datascript.transit :as dt]
     [datascript.lru :as dlru]))
 
 (def ^:export schema_to_clj      djs/schema->clj)
@@ -31,9 +32,11 @@
     (let [qp (reader/read-string q)]
       (vswap! query_cache assoc q qp)
       qp)))
-
+(def ^:export stringify_db dt/write-transit-str)
+(def ^:export parse_db dt/read-transit-str)
 (def ^:export DB_ID :db/id)
 (def ^:export DB_FN_CALL :db.fn/call)
+(def ^:export DB_FN_CAS :db.fn/cas)
 (def ^:export DB_BEFORE :db-before)
 (def ^:export DB_AFTER :db-after)
 (def ^:export TX_DATA :tx-data)

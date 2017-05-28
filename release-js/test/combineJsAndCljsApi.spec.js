@@ -49,4 +49,16 @@ describe('Use regular JS API for create connection and add data to DB', () => {
     assert(isSet(result), 'result is mori set')
     assert(equals(result, set([vector("Igor")])), 'result equals #{["Igor"]}')
   })
+
+  it('cas is just work', () => {
+    var conn = djs.create_conn();
+    djs.transact(conn, [
+      [':db/add', 1, 'weight', 200]
+    ]);
+    djs.transact(conn, [
+      [':db.fn/cas', 1, 'weight', 200, 300]
+    ]);
+    var e = djs.entity(djs.db(conn), 1);
+    assert(e.get('weight') === 300, 'CAS changed weight correctly');
+  });
 })

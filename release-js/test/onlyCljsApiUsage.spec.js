@@ -3,7 +3,8 @@ import {assert} from 'chai'
 var d = datascript.core // use datascript_mori.datascript.core API
 var djs = datascript.js
 var {hashMap, vector, parse, toJs, equals, isMap, hasKey, isSet, set, getIn, get} = mori
-var {DB_VALUE_TYPE, DB_TYPE_REF, DB_ADD, DB_ID, TEMPIDS} = helpers
+var {DB_VALUE_TYPE, DB_TYPE_REF, DB_ADD, DB_ID, TEMPIDS, DB_FN_CAS, stringify_db, 
+parse_db} = helpers
 
 describe('add data to DB and query them', () => {
   // scheme must be a mori structure or use helpers.schema_to_clj({friend: {":db/valueType": ":db.type/ref"}})
@@ -111,4 +112,35 @@ describe('create conn and use transact API', () => {
     assert(equals(result, set([vector("Ivan")])), 'result is #{["Ivan"]}')
   })
   d.unlisten_BANG_(conn, "main") //or djs.unlisten(conn, "main", callback) is fully equal definition
+});
+
+
+describe('CAS', () => {
+  it('cas is just work', () => {
+    var conn = d.create_conn();
+    d.transact_BANG_(conn, vector(
+      vector(DB_ADD, 1, 'weight', 200)
+    ));
+    d.transact_BANG_(conn, vector(
+      vector(DB_FN_CAS, 1, 'weight', 200, 300)
+    ));
+    var e = d.entity(d.db(conn), 1);
+    assert(get(e, 'weight') === 300, 'CAS changed weight correctly');
+  });
+});
+
+describe('serialization/deserialization', () => {
+  it('serialize', () => {
+    var db = d.empty_db();
+    var dbWithItem = d.db_with(db, vector(
+      vector(DB_ADD, 1, 'weight', 200)
+    ));
+    assert(stringify_db(dbWithItem) === '["~#datascript/DB",["^ ","~:schema",null,"~:datoms",["~#list",[["~#datascript/Datom",[1,"weight",200,536870913]]]]]]', 'stringify db works correctly');
+  });
+
+  it('deserialize', () => {
+    var db = parse_db('["~#datascript/DB",["^ ","~:schema",null,"~:datoms",["~#list",[["~#datascript/Datom",[1,"weight",200,536870913]]]]]]', 'stringify db works correctly');
+    var e = d.entity(db, 1);
+    assert(get(e, 'weight') === 200, 'deserialize works correctly');
+  })
 });
