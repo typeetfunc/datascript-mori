@@ -6,7 +6,7 @@
 
   :min-lein-version "2.5.3"
 
-  :dependencies [[org.clojure/clojure "1.7.0"]
+  :dependencies [[org.clojure/clojure "1.10.0"]
                  [org.clojure/clojurescript "1.7.170"]
                  [datascript "0.16.1"]
                  [datascript-transit "0.2.2"]]
