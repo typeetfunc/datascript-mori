@@ -1,5 +1,6 @@
 (ns datascript-mori.core
   (:require
+    [datascript-mori.dscore]
     [datascript.core :as d]
     [datascript.js :as djs]
     [datascript.parser :as dp]

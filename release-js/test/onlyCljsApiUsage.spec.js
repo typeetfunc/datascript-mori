@@ -1,11 +1,12 @@
-import {datascript, mori, helpers} from '../datascript-mori'
+import {datascript, mori, helpers, core} from '../datascript-mori'
 import {assert} from 'chai'
 var d = datascript.core // use datascript_mori.datascript.core API
 var djs = datascript.js
 var {hashMap, vector, parse, toJs, equals, isMap, hasKey, isSet, set, getIn, get} = mori
-var {DB_VALUE_TYPE, DB_TYPE_REF, DB_ADD, DB_ID, TEMPIDS, DB_FN_CAS, stringify_db, 
+var {DB_VALUE_TYPE, DB_TYPE_REF, DB_ADD, DB_ID, TEMPIDS, DB_FN_CAS, stringify_db,
 parse_db} = helpers
-
+// console.log(helpers);
+// console.log(core);
 describe('add data to DB and query them', () => {
   // scheme must be a mori structure or use helpers.schema_to_clj({friend: {":db/valueType": ":db.type/ref"}})
   var scheme = hashMap(

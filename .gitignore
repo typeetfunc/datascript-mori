@@ -2,4 +2,7 @@
 release-js/node_modules
 .lein-git-deps
 release-js/datascript-mori.bare.js
+release-js/package-lock.json
 release-js/datascript-mori.js
+release-js/datascript-mori*.tgz
+/pom.xml

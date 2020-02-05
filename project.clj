@@ -1,4 +1,4 @@
-(defproject datascript-mori "0.16.2"
+(defproject datascript-mori "0.18.0"
   :description "Wrapper for datascript interplay mori"
   :url "https://github.com/typeetfunc/datascript-mori"
   :license {:name "Eclipse Public License"
@@ -6,12 +6,12 @@
 
   :min-lein-version "2.5.3"
 
-  :dependencies [[org.clojure/clojure "1.7.0"]
-                 [org.clojure/clojurescript "1.7.170"]
-                 [datascript "0.16.1"]
-                 [datascript-transit "0.2.2"]]
+  :dependencies [    [org.clojure/clojure       "1.10.0"   :scope "provided"]
+                  [org.clojure/clojurescript "1.10.520" :scope "provided"]
+                 [datascript "0.18.8"]
+                 [datascript-transit "0.3.0"]]
 
-  :plugins [[lein-cljsbuild "1.1.2" :exclusions [[org.clojure/clojure]]]
+  :plugins [[lein-cljsbuild "1.1.7" :exclusions [[org.clojure/clojure]]]
             [lein-git-deps "0.0.2-SNAPSHOT"]]
 
   :git-dependencies [["https://github.com/swannodette/mori.git"]]
@@ -25,10 +25,7 @@
                 :compiler {
                            :output-to "release-js/datascript-mori.bare.js"
                            :main datascript-mori.core
-                           :externs ["release-js/datascript-core.extern.js"]
                            :optimizations :advanced
-                           :pretty-print false
-                           }
-                :notify-command ["release-js/wrap_bare.sh"]}]}
+                           :pretty-print false}
 
-  )
+                :notify-command ["release-js/wrap_bare.sh"]}]})
