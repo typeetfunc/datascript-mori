@@ -1,7 +1,9 @@
 (ns datascript-mori.core
   (:require
+    [goog.object :as gobject]
     [datascript-mori.dscore]
     [datascript.core :as d]
+    [datascript.db :as ddb]
     [datascript.js :as djs]
     [datascript.parser :as dp]
     [datascript.pull-parser :as dpp]
@@ -67,3 +69,7 @@
 (def ^:export E :e)
 (def ^:export A :a)
 (def ^:export V :v)
+
+(extend-type ddb/DB
+  cljs.core/IEncodeClojure
+  (-js->clj [x opts] x))

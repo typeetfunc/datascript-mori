@@ -142,5 +142,11 @@ describe('serialization/deserialization', () => {
     var db = parse_db('["~#datascript/DB",["^ ","~:schema",null,"~:datoms",["~#list",[["~#datascript/Datom",[1,"weight",200,536870913]]]]]]', 'stringify db works correctly');
     var e = d.entity(db, 1);
     assert(get(e, 'weight') === 200, 'deserialize works correctly');
-  })
+  });
+
+  it('toClj', () => {
+    var db1 = d.empty_db();
+    var db2 = mori.toClj(db1);
+    assert(mori.equals(db1, db2));
+  });
 });
