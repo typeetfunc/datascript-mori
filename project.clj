@@ -6,8 +6,8 @@
 
   :min-lein-version "2.5.3"
 
-  :dependencies [    [org.clojure/clojure       "1.10.0"   :scope "provided"]
-                  [org.clojure/clojurescript "1.10.520" :scope "provided"]
+  :dependencies [[org.clojure/clojure       "1.10.0"   :scope "provided"]
+                 [org.clojure/clojurescript "1.10.520" :scope "provided"]
                  [datascript "0.18.8"]
                  [datascript-transit "0.3.0"]]
 
@@ -22,8 +22,7 @@
   :cljsbuild {:builds
               [{:id "min"
                 :source-paths ["src" ".lein-git-deps/mori/src"]
-                :compiler {
-                           :output-to "release-js/datascript-mori.bare.js"
+                :compiler {:output-to "release-js/datascript-mori.bare.js"
                            :main datascript-mori.core
                            :optimizations :advanced
                            :pretty-print false}
